@@ -1,11 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import Col from 'react-bootstrap/Col';
-import Container from 'react-bootstrap/Container';
-import FormControl from 'react-bootstrap/FormControl';
-import InputGroup from 'react-bootstrap/InputGroup';
-import Row from 'react-bootstrap/Row';
+import {BrowserRouter, Routes, Route} from "react-router-dom"
 import { Navigation } from './components/Navigation';
-import { PokemonCard } from './components/PokemonCard';
+import { Home, PokemonDetails } from './routes';
 
 function App() {
   const [pokemonList, setPokemonList] = useState([]);
@@ -24,9 +20,18 @@ function App() {
   
 
   return (
+    <BrowserRouter>
     <div data-testid="app">
       <Navigation />
 
-      </div>
+      <Routes>
+        <Route path="/" element={<Home pokemonList={pokemonList} />} />
+        <Route path="/:name" element={<PokemonDetails  />} />
 
+      </Routes>
+
+    </div>
+    </BrowserRouter>
+  );
+}
 export { App };

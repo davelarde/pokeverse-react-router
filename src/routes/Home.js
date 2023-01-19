@@ -4,8 +4,7 @@ import Container from 'react-bootstrap/Container';
 import FormControl from 'react-bootstrap/FormControl';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Row from 'react-bootstrap/Row';
-import { Navigation } from './components/Navigation';
-import { PokemonCard } from './components/PokemonCard';
+import { PokemonCard } from '../components/PokemonCard';
 
 
 const [filteredPokemon, setFilteredPokemon] = useState([]);
@@ -19,7 +18,7 @@ const [filteredPokemon, setFilteredPokemon] = useState([]);
     );
   }, [search, pokemonList]);
 
-  
+
 return (
   <Container>
         <Row className='mb-4'>

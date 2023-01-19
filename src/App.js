@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import {BrowserRouter, Routes, Route} from "react-router-dom"
 import { Navigation } from './components/Navigation';
-import { Home, PokemonDetails } from './routes';
+import {Home} from './routes/Home'
+import { PokemonDetails } from './routes/PokemonDetails';
 
 function App() {
   const [pokemonList, setPokemonList] = useState([]);
